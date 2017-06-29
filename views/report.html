@@ -1,47 +1,49 @@
 <!DOCTYPE html>
 <html ng-app="demo">
+    <!--head da página-->
 	<head>
 		<title>Relatório dos ativos referentes ao inventário</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="author" content="">
-        <!-- Latest compiled and minified CSS -->
+
+       <!--referência ao bootstrap-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <!--referência ao arquivo css dessa página-->
         <link rel="stylesheet" href="stylesheets/reportStylesheet.css">
+       <!--referência ao angularjs-->
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
 	</head>
-    <div class="container">
+    <!--body da página-->
+    <body>
+        <!--container principal da página-->
+        <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h1>Relatório dos ativos referentes ao inventário</h1>
-
+                    <!--div que exibirá os dados presentes na controller-->
                     <div  ng-controller="myController">
+                        <!--div que possui as informações do relatório-->
                         <div id="entry" class="col-lg-12 text-center">
-                            
+                            <!--criação da lista com os itens do relatório-->
                             <ul>
                                 <li><p>Número de instrumentos: </p>{{count}} instrumentos</li>
-                                <li><p>Valor total dos instrumentos: </p>{{soma| currency : 'R$'}}</li>
-                                <li><p>Instrumento mais caro: </p>{{nomeMaiorPreco}}, {{maior| currency : 'R$'}}</li>
-                                <li><p>Instrumento mais barato: </p>{{nomeMenorPreco}}, {{menor| currency : 'R$'}}</li>
+                                <li><p>Valor total dos instrumentos: </p>{{soma| currency : 'R$'}}</li><!--currency aplicada na variável de preço-->
+                                <li><p>Instrumento mais caro: </p>{{nomeMaiorPreco}}, {{maior| currency : 'R$'}}</li><!--currency aplicada na variável de preço-->
+                                <li><p>Instrumento mais barato: </p>{{nomeMenorPreco}}, {{menor| currency : 'R$'}}</li><!--currency aplicada na variável de preço-->
                             </ul>
                         </div>    
                     </div>
-
-
                 </div>
             </div>
-        <!-- /.row -->
-
         </div>
-    <!-- /.container -->
+        
+    <!-- Referência à biblioteca jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>        
-<script src="javascripts/controller/reportController.js"></script>
-
+    <!-- Último JavaScript compilado -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>        
+    <script src="javascripts/controller/reportController.js"></script>
 
 	</body>
 </html>
