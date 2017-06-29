@@ -1,0 +1,13 @@
+body{
+    background-color:white;
+}
+
+ul,li{
+    list-style: none;
+    padding:0.3em;
+}
+
+p{
+    display:inline;
+    font-weight: bold;
+}

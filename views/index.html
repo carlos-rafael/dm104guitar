@@ -1,0 +1,74 @@
+<!doctype html>
+<html ng-app="demo">
+	<head>
+		<title>Guitar Inventory</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="stylesheets/stylesheet.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+	</head>
+
+	<body>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h1>Guitar Inventory</h1>
+
+                    <div  ng-controller="myController">
+                         <a  role="link" ng-click="popitup('report', '_blank')">Relatório</a>
+                        <div id="entry" class="col-lg-12 text-center">
+                            <div class="entryDisplay"><p>Id:</p> <input type="text" id="id" ng-model="instrument.id"></div>
+                            <div class="entryDisplay"><p>Nome:</p> <input type="text" id="name" ng-model="instrument.name"></div>
+                            <div class="entryDisplay"><p>Preço:</p><input type="text" id="price" ng-model="instrument.price"></div>
+                            <div class="entryDisplay"><p>Detalhe:</p><input type="text" id"detail" ng-model="instrument.detail"></div>
+                            <input type="button" ng-click="addinstrument()" value="Submit">
+                        <input type="button" ng-click="editinstrument(instrument.id, instrument.name, instrument.price, instrument.detail)" value="Update">
+                        </div>
+
+                        <div id="list" class="col-lg-12 text-center">
+                            <div ng-repeat="instrument in instruments">
+                                <!--<p>{{$index}}</p>-->
+                                <p><spam>Id</spam> {{instrument.id}}</p> 
+                                <p><spam>Nome</spam> {{instrument.name}}</p>
+                                <p><spam>Preço</spam> {{instrument.price | currency : 'R$'}}</p>
+                                <p><spam>Detalhe</spam> {{instrument.detail}}</p>
+                                <img src="images/edit.png" ng-click="writeinstrument($index)">
+                                <img src="images/close.png" ng-click="deleteinstrument(instrument)">
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+        <!-- /.row -->
+
+        </div>
+    <!-- /.container -->
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>        
+<script src="javascripts/controller/controller.js"></script>
+
+
+	</body>
+</html>
+
+<!--
+
+index.jade
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+
+
+-->

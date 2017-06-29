@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="demo">
+	<head>
+		<title>Relatório dos ativos referentes ao inventário</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="stylesheets/reportStylesheet.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+	</head>
+    <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h1>Relatório dos ativos referentes ao inventário</h1>
+
+                    <div  ng-controller="myController">
+                        <div id="entry" class="col-lg-12 text-center">
+                            
+                            <ul>
+                                <li><p>Número de instrumentos: </p>{{count}} instrumentos</li>
+                                <li><p>Valor total dos instrumentos: </p>{{soma| currency : 'R$'}}</li>
+                                <li><p>Instrumento mais caro: </p>{{nomeMaiorPreco}}, {{maior| currency : 'R$'}}</li>
+                                <li><p>Instrumento mais barato: </p>{{nomeMenorPreco}}, {{menor| currency : 'R$'}}</li>
+                            </ul>
+                        </div>    
+                    </div>
+
+
+                </div>
+            </div>
+        <!-- /.row -->
+
+        </div>
+    <!-- /.container -->
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>        
+<script src="javascripts/controller/reportController.js"></script>
+
+
+	</body>
+</html>
