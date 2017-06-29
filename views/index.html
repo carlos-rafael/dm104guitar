@@ -33,7 +33,7 @@
                                 <!--<p>{{$index}}</p>-->
                                 <p><spam>Id</spam> {{instrument.id}}</p> 
                                 <p><spam>Nome</spam> {{instrument.name}}</p>
-                                <p><spam>Preço</spam> {{instrument.price | currency : 'R$'}}</p>
+                                <p><spam>Preço</spam> {{instrument.price | currency: 'R$'}}</p>
                                 <p><spam>Detalhe</spam> {{instrument.detail}}</p>
                                 <img src="images/edit.png" ng-click="writeinstrument($index)">
                                 <img src="images/close.png" ng-click="deleteinstrument(instrument)">
