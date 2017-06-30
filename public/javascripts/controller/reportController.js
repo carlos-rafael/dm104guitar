@@ -11,7 +11,7 @@
         
         //controller chama serviço que invoca todos os instrumentos
         $scope.soma= MyService.getinstruments($http, $scope);
-        console.log("aifjaoifejaoeifjaoeif", $scope.soma);
+
         $scope.writeinstrument = function(index){
             $scope.instrument.id= $scope.instruments[index].id;
             $scope.instrument.name= $scope.instruments[index].name;
@@ -38,7 +38,7 @@
             var nomeMenorP = '';
 
             //operação GET
-            $http.get('http://localhost:3000/Instruments').
+            $http.get('https://localhost:3000/Instruments').
             then(function(response){
 
                 //varre todos os instrumentos, e lista o valor total de todos os instrumentos, o nome do mais e menos valioso, com seus respectivos preços
