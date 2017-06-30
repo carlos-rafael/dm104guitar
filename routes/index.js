@@ -5,7 +5,7 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
-
+/* GET report page.*/ 
 router.get('/report', function(req, res, next) {
   res.render('report');
 });
