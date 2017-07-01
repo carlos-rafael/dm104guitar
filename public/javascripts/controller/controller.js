@@ -77,7 +77,8 @@
             //console.log(JSON.stringify(data));
             
             //chama uma operação post com a rota necessária, e o objeto em json
-            $http.post('https://localhost:3000/Instruments/', JSON.stringify(data)).then(function (response) {
+            //$http.post('http://localhost:3000/Instruments/', JSON.stringify(data)).then(function (response) {
+            $http.post('https://guitarapi.herokuapp.com/Instruments', JSON.stringify(data)).then(function (response) {
                 if (response.data)
                     $scope.msg = "Post Data Submitted Successfully!";
                     //console.log(response.data);
@@ -103,7 +104,8 @@
         //serviço que retorna todos os instrumentos do banco
         service.getinstruments = function($http, $scope){
             //operação get
-            $http.get('https://localhost:3000/Instruments').
+            //$http.get('http://localhost:3000/Instruments').
+            $http.get('https://guitarapi.herokuapp.com/Instruments').
             then(function(response){
                 //console.log('realizou getAll',response.data);
                 $scope.instruments = response.data;
@@ -118,7 +120,9 @@
 
             index = index.id;
 
-            var url = 'https://localhost:3000/Instruments/'+index, data = 'parameters';
+            //var url = 'http://localhost:3000/Instruments/'+index, data = 'parameters';
+            var url = 'https://guitarapi.herokuapp.com/Instruments/'+index, data = 'parameters';
+
             //operação delete que deleta um instrumento do banco
             $http.delete(url, data).then(function (response) {
             //console.log('sucesso');
@@ -142,7 +146,8 @@
             //console.log(JSON.stringify(data));
 
             //operação put que passa o id do instrumento como parâmetro, e o objeto em json no corpo da requisição
-            $http.put('https://localhost:3000/Instruments/'+data.id, JSON.stringify(data)).then(function (response) {
+            //$http.put('http://localhost:3000/Instruments/'+data.id, JSON.stringify(data)).then(function (response) {
+            $http.put('https://guitarapi.herokuapp.com/Instruments/'+data.id, JSON.stringify(data)).then(function (response) {
                 if (response.data)
                     $scope.msg = "Put Data Submitted Successfully!";
                     //console.log(response.data);
