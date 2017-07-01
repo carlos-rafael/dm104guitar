@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS `guitarInventory1` (
+ `id` varchar(50) NOT NULL,
+ `name` varchar(50) DEFAULT NULL,
+ `price` varchar(500) DEFAULT NULL,
+ `detail` varchar(100) DEFAULT NULL,
+ PRIMARY KEY (`id`)
+ ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+ 
