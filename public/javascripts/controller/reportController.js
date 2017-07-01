@@ -38,7 +38,8 @@
             var nomeMenorP = '';
 
             //operação GET
-            $http.get('https://localhost:3000/Instruments').
+            //$http.get('https://localhost:3000/Instruments').
+            $http.get('https://guitarapi.herokuapp.com/Instruments').
             then(function(response){
 
                 //varre todos os instrumentos, e lista o valor total de todos os instrumentos, o nome do mais e menos valioso, com seus respectivos preços
